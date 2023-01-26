@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>API 서버 로그인</title>
+    <style>
+      .input-group label { width: 200px; display: inline-block; }
+    </style>
+  </head>
+  <body>
+    {% if user and user.id %}
+      <span class="user-name">안녕하세요! {{user.nick}}님</span>
+      <a href="/auth/logout">
+        <button>로그아웃</button>
+      </a>
+    </body>
+</html>

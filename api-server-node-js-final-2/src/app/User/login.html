@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>API 서버 로그인</title>
+    <style>
+      .input-group label { width: 200px; display: inline-block; }
+    </style>
+  </head>
+  <body>
+      <form action="/a/login" id="login-form" method="post">
+        <h2>UMC 계정으로 로그인하세요.</h2>
+        <div class="input-group">
+          <label for="email">이메일</label>
+          <input id="email" type="email" name="email" required autofocus>
+        </div>
+        <div class="input-group">
+          <label for="password">비밀번호</label>
+          <input id="password" type="password" name="password" required>
+        </div>
+        <div>회원가입은 localhost:3000에서 하세요.</div>
+        <button id="login" type="submit">로그인</button>
+      </form>
+      <script>
+        window.onload = () => {
+          if (new URL(location.href).searchParams.get('loginError')) {
+            alert(new URL(location.href).searchParams.get('loginError'));
+          }
+        };
+      </script>
+  </body>
+</html>
